@@ -25,18 +25,18 @@ module ALU(A_in, B_in, ALU_Sel, ALU_Out, Zero, Carry_Out, Overflow);
 	// Ex : ALU_Sel = 0010; R = FFEB; S = DDC3; // {Y = DDC4}
 	//			dump_memory; $display ("gawgasgasgd"); endtask
 	output 	[32:0] ALU_Out;
-	output 			  Overflow, Zero, Carry_Out;
+	output 		   Overflow, Zero, Carry_Out;
 	
 	reg		[ 32:0] ALU_Out;
-	reg				  Overflow, Zero, Carry_Out;
+	reg				Overflow, Zero, Carry_Out;
 	
 	always @ (A_in or B_in or ALU_Sel) begin
 		case (ALU_Sel)
 		    4'b0000: {Carry_Out,ALU_Out} = {1'b0, A_in & B_in}; // AND
 		    4'b0001: {Carry_Out,ALU_Out} = {1'b0, A_in | B_in}; // OR
 		    4'b0010: {Carry_Out,ALU_Out} = A_in + B_in;         // add
-		    4'b0010: {Carry_Out,ALU_Out} = A_in - B_in;         // sub
-		    4'b0010: begin 
+		    4'b0110: {Carry_Out,ALU_Out} = A_in - B_in;         // sub
+		    4'b0111: begin 
 		                  if (A_in<B_in) begin 
 		                      {Carry_Out,ALU_Out} = {1'b0,1'b1};
 		                  end else begin
