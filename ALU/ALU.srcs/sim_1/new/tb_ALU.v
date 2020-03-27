@@ -23,10 +23,10 @@
 module tb_ALU;
     
     // inputs
-    reg 	[32:0] tb_din_a, tb_din_b;
+    reg 	[31:0] tb_din_a, tb_din_b;
 	reg 	[ 3:0]  tb_alu_sel;
 	//outputs
-	wire 	[32:0] ALU_Out;
+	wire 	[31:0] ALU_Out;
 	wire 		   Overflow, Zero, Carry_Out;
 	
 	// UUT

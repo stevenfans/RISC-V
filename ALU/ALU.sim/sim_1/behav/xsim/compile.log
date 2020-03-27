@@ -1,4 +1,4 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/1anh2/OneDrive/Documents/RISC-V/RISC-V/ALU/ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/RISC-V/ALU/ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module ALU
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/1anh2/OneDrive/Documents/RISC-V/RISC-V/ALU/ALU.srcs/sim_1/new/tb_ALU.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/RISC-V/ALU/ALU.srcs/sim_1/new/tb_ALU.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module tb_ALU
