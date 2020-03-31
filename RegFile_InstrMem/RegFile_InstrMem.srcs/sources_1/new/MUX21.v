@@ -27,5 +27,5 @@ module MUX21(
     output [31:0] Y
     );
     
-    assign Y = S ? D1:D2; 
+    assign Y = S ? D1:D2;  
 endmodule

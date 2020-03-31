@@ -42,7 +42,7 @@ module RegFile(
         if (reset) begin 
             for(i=0; i<32; i=i+1)
                 register[i] <= 32'b0;
-        end else begin 
+        end else if(rg_wrt_en) begin 
             register[rg_wrt_addr] <= rg_wrt_data; 
         end
     end
