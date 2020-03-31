@@ -22,22 +22,22 @@
 
 module Instr_mem(
     input [7:0] addr,
-    output [31:0] instruction
+    output wire [31:0] instruction
     );
     
     reg [31:0] memory [63:0]; 
     
     initial begin 
-        memory[0] = 32'h00007033;// and r0, r0, r032'h00000000
-        memory[1] = 32'h00100093;// addi r1, r0, 132'h00000001
-        memory[2] = 32'h00200113;// addi r2, r0, 232'h00000002
-        memory[3] = 32'h00308193;// addi r3, r1, 332'h00000004
-        memory[4] = 32'h00408213;// addi r4, r1, 432'h00000005
-        memory[5] = 32'h00510293;// addi r5, r2, 532'h00000007
-        memory[6] = 32'h00610313;// addi r6, r2, 632'h00000008
-        memory[7] = 32'h00718393;// addi r7, r3, 732'h0000000B
-        memory[8] = 32'h00208433;// add r8, r1, r232'h00000003
-        memory[9] = 32'h404404b3;// sub r9, r8, r432'hfffffffe
+        memory[0] = 32'h00007033; // and r0, r0, r032'h00000000
+        memory[1] = 32'h00100093; // addi r1, r0, 132'h00000001
+        memory[2] = 32'h00200113; // addi r2, r0, 232'h00000002
+        memory[3] = 32'h00308193; // addi r3, r1, 332'h00000004
+        memory[4] = 32'h00408213; // addi r4, r1, 432'h00000005
+        memory[5] = 32'h00510293; // addi r5, r2, 532'h00000007
+        memory[6] = 32'h00610313; // addi r6, r2, 632'h00000008
+        memory[7] = 32'h00718393; // addi r7, r3, 732'h0000000B
+        memory[8] = 32'h00208433; // add r8, r1, r232'h00000003
+        memory[9] = 32'h404404b3; // sub r9, r8, r432'hfffffffe
         memory[10] = 32'h00317533;// and r10, r2, r332'h00000000
         memory[11] = 32'h0041e5b3;// or r11, r3, r432'h00000005
         memory[12] = 32'h0041a633;// if r3 is less than r4 then r12 = 132'h00000001
@@ -48,6 +48,6 @@ module Instr_mem(
         memory[17] = 32'h4d244893;// nori r17, r8, "4D2"32'hfffffb2C    
     end 
     
-    assign instruction = memory[addr[7:0]];
+    assign instruction = memory[addr[7:2]];
     
 endmodule
