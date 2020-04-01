@@ -37,13 +37,14 @@ module DataPath(
 
     // wires 
     wire [7:0]  PCPlus4; 
-    wire [31:0] Instruction;
+    wire [31:0] Instruction, Reg1, Reg2, WriteBack_Data, SrcB;
+    wire [8:0]  ALU_Result;
     
     // reg
     reg [7:0] PC;
-    reg d1;
+    reg ExtImm;
 
-    FlipFLop dflop(
+    FlipFlop dflop(
             .clk(clk),
             .reset(reset),
             .d(PCPlus4),
@@ -55,15 +56,45 @@ module DataPath(
         .instruction(Instruction)
     );
 
-    //TODO NEED TO ADD A HALF-ADDER MODULE
-    
+    HalfAdder ha(
+            .A(PC),
+            .B(8'h04),
+            .Sum(PCPlus4)
+        );
+
     ImmGen imm_gen(
-        .InstCode(Instruction),
-        .ImmOut(d1)
-    ); 
+            .InstCode(Instruction),
+            .ImmOut(d1)
+        ); 
 
+    RegFile reg_file(
+            .clk(clk),
+            .reset(reset),
+            .rg_wrt_en(RegWrite),
+            .rg_wrt_addr(Instruction[11:7]),
+            .rg_rd_addr1(Instruction[19:15]),
+            .rg_rd_addr2(Instruction[24:20]),
+            .rg_wrt_data(WriteBack_Data),
+            .rg_rd_data1(Reg1),
+            .rg_rd_data(Reg2)
+        );
 
+    MUX21 alu_mux(
+            .D1(Reg2),
+            .D2(ExtImm),
+            .S(ALUSrc),
+            .Y(SrcB)
+        );
 
+    ALU alu (
+            .A_in(Reg1),
+            .B_in(SrcB),
+            .ALU_Sel(ALUCC),
+        );
+
+    MemWrite mem_write(
+
+        );
     
 
 endmodule 
