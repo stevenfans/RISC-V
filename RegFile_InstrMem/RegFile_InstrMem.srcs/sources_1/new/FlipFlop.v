@@ -27,7 +27,7 @@ module FlipFlop(
     output reg [7:0] q
     );
     
-    always @(posedge reset, posedge clk)
+    always @(posedge clk)
     begin
         if (reset) begin
             q <= 8'h00; 

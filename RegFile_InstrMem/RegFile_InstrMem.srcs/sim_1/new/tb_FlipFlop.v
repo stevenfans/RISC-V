@@ -45,7 +45,7 @@ module tb_FlipFlop;
         tb_clk = 0; 
         tb_reset = 1;
         tb_d = 9; 
-        #20; //20 ns delay
+        #17; //17 ns delay
          
         tb_reset = 0;
         #50; 
