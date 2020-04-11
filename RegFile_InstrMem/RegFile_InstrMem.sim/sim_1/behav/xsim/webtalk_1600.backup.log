@@ -2,13 +2,13 @@
 # Webtalk v2019.2 (64-bit)
 # SW Build 2708876 on Wed Nov  6 21:40:23 MST 2019
 # IP Build 2700528 on Thu Nov  7 00:09:20 MST 2019
-# Start of session at: Mon Mar 30 17:41:26 2020
-# Process ID: 254636
+# Start of session at: Fri Apr 10 18:24:09 2020
+# Process ID: 1600
 # Current directory: C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim
 # Command line: wbtcv.exe -mode batch -source C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim/xsim.dir/tb_FlipFlop_behav/webtalk/xsim_webtalk.tcl -notrace
 # Log file: C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim/webtalk.log
 # Journal file: C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim\webtalk.jou
 #-----------------------------------------------------------
 source C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim/xsim.dir/tb_FlipFlop_behav/webtalk/xsim_webtalk.tcl -notrace
-INFO: [Common 17-186] 'C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim/xsim.dir/tb_FlipFlop_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Mon Mar 30 17:41:28 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
-INFO: [Common 17-206] Exiting Webtalk at Mon Mar 30 17:41:28 2020...
+INFO: [Common 17-186] 'C:/Projects/RISC-V/RegFile_InstrMem/RegFile_InstrMem.sim/sim_1/behav/xsim/xsim.dir/tb_FlipFlop_behav/webtalk/usage_statistics_ext_xsim.xml' has been successfully sent to Xilinx on Fri Apr 10 18:24:11 2020. For additional details about this file, please refer to the WebTalk help file at C:/Xilinx/Vivado/2019.2/doc/webtalk_introduction.html.
+INFO: [Common 17-206] Exiting Webtalk at Fri Apr 10 18:24:11 2020...

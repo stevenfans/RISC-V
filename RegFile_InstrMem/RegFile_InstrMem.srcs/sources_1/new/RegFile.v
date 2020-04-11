@@ -46,9 +46,9 @@ module RegFile(
             register[rg_wrt_addr] <= rg_wrt_data; 
         end
     end
-    
+
+    // output the data from the register
     assign rg_rd_data1 = register[rg_rd_addr1];
     assign rg_rd_data2 = register[rg_rd_addr2];
-    
     
 endmodule

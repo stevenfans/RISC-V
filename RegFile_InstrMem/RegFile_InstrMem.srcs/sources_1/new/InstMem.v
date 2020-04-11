@@ -24,7 +24,7 @@ module InstMem(
     input [7:0] addr,
     output wire [31:0] instruction
     );
-    
+    // create 64x32 memory
     reg [31:0] memory [63:0]; 
     
     initial begin 
@@ -49,6 +49,6 @@ module InstMem(
     end 
     
     assign instruction = memory[addr[7:2]];
-    
+
 endmodule
 

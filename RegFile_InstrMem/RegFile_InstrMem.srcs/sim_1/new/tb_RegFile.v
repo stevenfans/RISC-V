@@ -42,13 +42,28 @@ module tb_RegFile;
 always #5 tb_clk = ~tb_clk;
 
 initial begin
-       tb_clk = 0; 
+        tb_clk = 0; 
         tb_reset = 1;
         #100; 
         tb_reset = 0;
         #10;
+
+        // test write enabled
         tb_rg_wrt_en = 1;
         tb_rg_wrt_addr = 8'h12;
         tb_rg_wrt_data = 12;
+        #50; 
+
+        // test write disabled
+        tb_rg_wrt_en = 0;
+        tb_rg_wrt_addr = 8'h00;
+        tb_rg_wrt_data = 99;
+        #50; 
+
+        // test write enabled
+        tb_rg_wrt_en = 1;
+        tb_rg_wrt_addr = 8'h00;
+        tb_rg_wrt_data = 99;
+        #50;  
    end
 endmodule
