@@ -23,9 +23,9 @@
 module DataMem(
     input MemRead,
     input MemWrite,
-    input [31:0] addr,
+    input [8:0] addr,
     input [31:0] write_data,
-    output [31:0] read_data
+    output reg [31:0] read_data
     );
 
     integer i;
@@ -35,20 +35,18 @@ module DataMem(
     // need to populate the memory at ts:0
     initial begin
         for(i=0; i<128; i=i+1) begin
-            memory[i] = 32'h00; 
+            memory[i] <= 0; 
         end
     end
 
 
-    always @ (MemRead, MemRead) begin
-        if (MemWrite)begin
-            memory[addr] = write_data; 
+    always @ (MemWrite,MemRead) begin
+        if (MemWrite) begin
+            memory[addr] <= write_data; 
         end
-        if (MemRead) begin
-            read_data = memory[addr];
+        else if (MemRead) begin
+            read_data <= memory[addr];
         end
     end
-
-
 
 endmodule
