@@ -39,10 +39,20 @@ module DataMem(
         end
     end
 
+    // Byte addressable memory
+    // 32 bits is 4 bytes
+    // so 128 x 4 = 512
+    // example. addr = 1 ** 2 = byte 1 is @ 128/
+    //          addr = 10 ** 2 = byte 100
+    // to determine which reg to write to div by 4 and floor
+    // ex. byte 10 so floor(10/4) = 3
+    // to determine the which  x mod (floor(x/4)*4) then shift times 2
+    // reference image http://i.stack.imgur.com/rpB7N.png
 
     always @ (MemWrite,MemRead) begin
         if (MemWrite) begin
-            memory[addr] <= write_data; 
+            memory[(addr/4)][(addr%(addr/4)*4)] <= write_data; 
+            // memory[addr] <=write_data;
         end
         else if (MemRead) begin
             read_data <= memory[addr];

@@ -9,6 +9,7 @@ module tb_DataMem;
     // outputs
     wire [31:0] tb_read_data; 
 
+    integer s ; 
 
     // UUT 
     DataMem UUT (
@@ -20,6 +21,7 @@ module tb_DataMem;
     );
     
     initial begin
+        s = 0; 
         tb_MemRead = 0; 
         tb_MemWrite =0; 
         tb_addr = 9'h000;  
