@@ -43,6 +43,7 @@ module DataPath(
     // reg
     reg [7:0] PC;
     reg ExtImm;
+    reg [31:0] DataMem_read;
 
     FlipFlop dflop(
             .clk(clk),
@@ -86,14 +87,22 @@ module DataPath(
             .Y(SrcB)
         );
 
-    ALU alu (
+    alu_32 alu(
             .A_in(Reg1),
             .B_in(SrcB),
             .ALU_Sel(ALUCC),
+            .ALU_Result(ALU_Result),
+            .Carry_Out(),
+            .Zero(),
+            .Overflow()
         );
 
-    MemWrite mem_write(
-
+    DataMem data_mem(
+            .MemRead(MemRead),
+            .MemWrite(MemWrite),
+            .addr(ALU_Result),
+            .write_data(Reg2),
+            .read_data(DataMem_read)
         );
     
 
