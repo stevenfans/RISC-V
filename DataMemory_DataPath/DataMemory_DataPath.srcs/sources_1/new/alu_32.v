@@ -25,9 +25,9 @@ module alu_32(
     input [31:0] B_in,
     input [3:0] ALU_Sel,
     output [31:0] ALU_Out,
-    output Carry_Out,
+    output reg Carry_Out,
     output Zero,
-    output Overflow = 1'b0
+    output reg Overflow
     );
 
     reg [31:0] ALU_Result; 

@@ -64,7 +64,7 @@ module dp_tb_top();
         );
 
     // Stimulus
-    wire [6:0] R_TYPE, LW, SW, RTypeI; 
+    wire [6:0] R_TYPE, LW, SW, RTypeI;
 
     assign R_TYPE = 7'b0110011; 
     assign LW     = 7'b0000011; 
@@ -77,11 +77,11 @@ module dp_tb_top();
     assign mem_read  = (opcode==LW); 
     assign mem_write = (opcode==SW); 
 
-    assign alu_cc = ((opcode==R_TYPE || opcode==R_TypeI) 
+    assign alu_cc = ((opcode==R_TYPE || opcode==RTypeI) 
                     && (funct7==7'b0000000) && (funct3==3'b000))?4'b0010: 
                     ((opcode==R_TYPE || opcode==RTypeI)
                     && (funct7 == 7'b0100000)) ? 4'b0110: 
-                    ((opcode==R_TYPE || opcode==R_TypeI)
+                    ((opcode==R_TYPE || opcode==RTypeI)
                     && (funct7==7'b0000000) && (funct3==3'b100)) ? 4'b1100:
                     ((opcode==R_TYPE || opcode==RTypeI)
                     && (funct7==7'b0000000) && (funct3==3'b110)) ? 4'b0001:
@@ -97,7 +97,8 @@ module dp_tb_top();
                     && (funct3==3'b010)) ? 4'b0111: 
                     ((opcode==LW || opcode == SW)
                     && (funct3==3'b010)) ? 4'b0010 : 0; 
-    initial begin 
+    initial begin
+//        reg_write = R_TYPE; #10; reg_write = 0; 
         #420
         $finish; 
     end

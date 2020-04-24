@@ -28,7 +28,9 @@ module HalfAdder(
     );
 
     // use the Half-Adder circuit
-    xor(Sum,A,B);
-    and(Cout,A,B);
+//    xor(Sum[7:0],A[7:0],B[7:0]);
+//    and(Cout,A,B);
+    assign Sum = A ^ B; 
+    assign Cout = A & B; 
 
 endmodule

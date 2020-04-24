@@ -46,6 +46,8 @@ module InstMem(
         memory[15] = 32'h8d35e793;// ori r15, r11, "8d3"32'hfffff8d7
         memory[16] = 32'h4d26a813;// if r13 is less than 32'h000004D2 then r16 = 132'h00000001
         memory[17] = 32'h4d244893;// nori r17, r8, "4D2"32'hfffffb2C    
+        memory[18] = 32'h02b02823; // sw r11, 48(r0) alu result = 32’h00000030
+        memory[19] = 32'h03002603; // lw r12, 48(r0) alu result = 32'h00000030 r12 = 32'h00000005
     end 
     
     assign instruction = memory[addr[7:2]];

@@ -46,12 +46,12 @@ module DataPath(
     // wires 
     wire [7:0]  PCPlus4; 
     wire [31:0] Instruction, Reg1, Reg2, WriteBack_Data, SrcB;
-    wire [8:0]  ALU_Result;
+    wire [31:0]  ALU_Result;
     
     // reg
-    reg [7:0] PC;
-    reg ExtImm;
-    reg [31:0] DataMem_read;
+    wire [7:0] PC;
+    wire [31:0] ExtImm;
+    wire [31:0] DataMem_read;
 
     FlipFlop dflop(
             .clk(clk),
@@ -61,19 +61,20 @@ module DataPath(
         );
 
     InstMem inst_mem(
-        .addr(pC),
+        .addr(PC),
         .instruction(Instruction)
     );
 
     HalfAdder ha(
             .A(PC),
             .B(8'h04),
-            .Sum(PCPlus4)
+            .Sum(PCPlus4),
+            .Cout()
         );
 
     ImmGen imm_gen(
             .InstCode(Instruction),
-            .ImmOut(d1)
+            .ImmOut(ExtImm)
         ); 
 
     RegFile reg_file(
@@ -85,7 +86,7 @@ module DataPath(
             .rg_rd_addr2(Instruction[24:20]),
             .rg_wrt_data(WriteBack_Data),
             .rg_rd_data1(Reg1),
-            .rg_rd_data(Reg2)
+            .rg_rd_data2(Reg2)
         );
 
     MUX21 alu_mux(
@@ -99,7 +100,7 @@ module DataPath(
             .A_in(Reg1),
             .B_in(SrcB),
             .ALU_Sel(ALUCC),
-            .ALU_Result(ALU_Result),
+            .ALU_Out(ALU_Result),
             .Carry_Out(),
             .Zero(),
             .Overflow()
@@ -108,10 +109,20 @@ module DataPath(
     DataMem data_mem(
             .MemRead(MemRead),
             .MemWrite(MemWrite),
-            .addr(ALU_Result),
+            .addr(ALU_Result[8:0]),
             .write_data(Reg2),
             .read_data(DataMem_read)
         );
+        
+    MUX21 data_mem_mux(
+            .D1(ALU_Result),
+            .D2(DataMem_read),
+            .S(MemtoReg),
+            .Y(WriteBack_Data)  
+        );
     
-
+    assign opcode = Instruction[6:0]; 
+    assign Funct3 = Instruction[14:12]; 
+    assign Funct7 = Instruction[31:25]; 
+    assign Datapath_Result = ALU_Result;    
 endmodule 
