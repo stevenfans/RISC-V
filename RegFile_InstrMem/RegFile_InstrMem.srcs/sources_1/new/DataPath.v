@@ -27,13 +27,21 @@ module DataPath(
     input ALUSrc,
     input MemWrite,
     input MemtoReg,
-    input ALUCC,
+    input [3:0]ALUCC,
     input MemRead,
     output [6:0] opcode,
-    output [0:0] Funct3,
+    output [2:0] Funct3,
     output [6:0] Funct7,
-    output [8:0] Datapath_Result
+    output [31:0] Datapath_Result
     );
+
+    //parameters
+    parameter PC_W = 8; 
+    parameter INS_W = 32;
+    parameter RF_ADDRESS =5;
+    parameter DATA_W = 32; 
+    parameter DM_ADDRESS = 9; 
+    parameter ALU_CC_W = 4;
 
     // wires 
     wire [7:0]  PCPlus4; 

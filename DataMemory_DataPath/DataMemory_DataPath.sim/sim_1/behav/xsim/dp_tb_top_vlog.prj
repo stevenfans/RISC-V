@@ -1,0 +1,18 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../DataMemory_DataPath.srcs/sources_1/new/DataMem.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/DataPath.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/FlipFlop.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/HalfAdder.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/ImmGen.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/InstMem.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/MUX21.v" \
+"../../../../../RegFile_InstrMem/RegFile_InstrMem.srcs/sources_1/new/RegFile.v" \
+"../../../../DataMemory_DataPath.srcs/sources_1/new/alu_32.v" \
+"../../../../DataMemory_DataPath.srcs/sim_1/new/dp_tb_top.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
