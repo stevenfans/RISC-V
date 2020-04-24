@@ -23,21 +23,21 @@ module tb_DataMem;
     initial begin
         s = 0; 
         tb_MemRead = 0; 
-        tb_MemWrite =0; 
+        tb_MemWrite =0;     
         tb_addr = 9'h000;  
         tb_write_data=0 ; 
         #100; 
 
         // test writing capabilities
         tb_MemWrite = 1; 
-        tb_addr = 9'h007; 
+        tb_addr = 9'h030; 
         tb_write_data = 32'h99999999; 
         #100; 
 
         // test read
         tb_MemRead = 1; 
         tb_MemWrite = 0; 
-        tb_addr = 9'h07F; 
+        tb_addr = 9'h030; 
 
     end
 

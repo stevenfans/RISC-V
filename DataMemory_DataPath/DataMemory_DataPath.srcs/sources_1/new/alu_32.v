@@ -27,14 +27,14 @@ module alu_32(
     output [31:0] ALU_Out,
     output reg Carry_Out,
     output Zero,
-    output reg Overflow
+    output reg Overflow =1'b0
     );
 
     reg [31:0] ALU_Result; 
     reg [32:0] temp; 
     reg [32:0] twos_com; // to hold 2'sc of second source of ALU
 
-    assign ALU_out = ALU_Result;   //ALU Out 
+    assign ALU_Out = ALU_Result;   //ALU Out 
     assign Zero = (ALU_Result==0); //Zero 
 
     always @ (*)

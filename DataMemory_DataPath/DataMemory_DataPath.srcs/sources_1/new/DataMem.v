@@ -51,11 +51,12 @@ module DataMem(
 
     always @ (MemWrite,MemRead) begin
         if (MemWrite) begin
-            memory[(addr/4)][(addr%(addr/4)*4)] <= write_data; 
-            // memory[addr] <=write_data;
+            // memory[(addr/4)][(addr%(addr/4)*4)] <= write_data; 
+            memory[addr] <=write_data;
         end
         else if (MemRead) begin
-            read_data <= memory[addr];
+            // read_data <= memory[(addr/4)][(addr%(addr/4)*4)];
+            read_data<=memory[addr];
         end
     end
 

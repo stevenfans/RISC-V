@@ -26,11 +26,11 @@ module HalfAdder(
     output [7:0] Sum,
     output Cout
     );
-
+    assign Sum = A + B; 
     // use the Half-Adder circuit
 //    xor(Sum[7:0],A[7:0],B[7:0]);
 //    and(Cout,A,B);
-    assign Sum = A ^ B; 
-    assign Cout = A & B; 
+    // assign Sum = A ^ B; 
+    // assign Cout = A & B; 
 
 endmodule
