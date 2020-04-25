@@ -33,7 +33,7 @@ module RegFile(
     );
     
     reg [31:0] register [31:0];
-    integer i = 0   ; 
+    integer i = 0;
     
     // If Reset signal we should reset the register file 
     // (set all registers to 32'h00000000)

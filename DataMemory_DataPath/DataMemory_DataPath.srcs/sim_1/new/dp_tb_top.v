@@ -51,16 +51,16 @@ module dp_tb_top();
     DataPath dp_inst(
             .reset(rst),
             .clk(clk),
-            .RegWrite(reg_write),
-            .ALUSrc(alu_src),
-            .MemWrite(mem_write),
-            .MemtoReg(mem2reg),
-            .ALUCC(alu_cc),
-            .MemRead(mem_read),
+            .reg_write(reg_write),
+            .alu_src(alu_src),
+            .mem_write(mem_write),
+            .mem2reg(mem2reg),
+            .alu_cc(alu_cc),
+            .mem_read(mem_read),
             .opcode(opcode),
-            .Funct3(funct3),
-            .Funct7(funct7),
-            .Datapath_Result(alu_result)
+            .funct3(funct3),
+            .funct7(funct7),
+            .alu_result(alu_result)
         );
 
     // Stimulus

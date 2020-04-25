@@ -23,16 +23,16 @@
 module DataPath(
     input reset,
     input clk,
-    input RegWrite,
-    input ALUSrc,
-    input MemWrite,
-    input MemtoReg,
-    input [3:0]ALUCC,
-    input MemRead,
+    input reg_write,
+    input alu_src,
+    input mem_write,
+    input mem2reg,
+    input [3:0] alu_cc,
+    input mem_read,
     output [6:0] opcode,
-    output [2:0] Funct3,
-    output [6:0] Funct7,
-    output [31:0] Datapath_Result
+    output [2:0] funct3,
+    output [6:0] funct7,
+    output [31:0] alu_result // Datapath_Result 
     );
 
     //parameters
@@ -80,7 +80,7 @@ module DataPath(
     RegFile reg_file(
             .clk(clk),
             .reset(reset),
-            .rg_wrt_en(RegWrite),
+            .rg_wrt_en(reg_write),
             .rg_wrt_addr(Instruction[11:7]),
             .rg_rd_addr1(Instruction[19:15]),
             .rg_rd_addr2(Instruction[24:20]),
@@ -92,14 +92,14 @@ module DataPath(
     MUX21 alu_mux(
             .D1(Reg2),
             .D2(ExtImm),
-            .S(ALUSrc),
+            .S(alu_src),
             .Y(SrcB)
         );
 
     alu_32 alu(
             .A_in(Reg1),
             .B_in(SrcB),
-            .ALU_Sel(ALUCC),
+            .ALU_Sel(alu_cc),
             .ALU_Out(ALU_Result),
             .Carry_Out(),
             .Zero(),
@@ -107,8 +107,8 @@ module DataPath(
         );
 
     DataMem data_mem(
-            .MemRead(MemRead),
-            .MemWrite(MemWrite),
+            .MemRead(mem_read),
+            .MemWrite(mem_write),
             .addr(ALU_Result[8:0]),
             .write_data(Reg2),
             .read_data(DataMem_read)
@@ -117,12 +117,12 @@ module DataPath(
     MUX21 data_mem_mux(
             .D1(ALU_Result),
             .D2(DataMem_read),
-            .S(MemtoReg),
+            .S(mem2reg),
             .Y(WriteBack_Data)  
         );
     
     assign opcode = Instruction[6:0]; 
-    assign Funct3 = Instruction[14:12]; 
-    assign Funct7 = Instruction[31:25]; 
-    assign Datapath_Result = ALU_Result;    
+    assign funct3 = Instruction[14:12]; 
+    assign funct7 = Instruction[31:25]; 
+    assign alu_result = ALU_Result;    
 endmodule 
