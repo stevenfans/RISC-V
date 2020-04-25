@@ -51,7 +51,8 @@ module DataMem(
 
     always @ (MemWrite,MemRead) begin
         if (MemWrite) begin
-            // memory[(addr/4)][(addr%(addr/4)*4)] <= write_data; 
+//                memory[1][1] = 8'hAA; 
+//             memory[(addr/4)][(addr%(addr/4)*4)] <= 8'hAA; //write_data[1:0]; 
             memory[addr] <=write_data;
         end
         else if (MemRead) begin
