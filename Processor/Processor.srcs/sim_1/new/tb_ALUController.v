@@ -28,7 +28,7 @@ module tb_ALUController;
     reg [2:0] tb_Funct3; 
     
     // outputs
-    wire [3:0] tb_Operation
+    wire [3:0] tb_Operation;
 
     // insantiate the DUT
     ALUController DUT(
@@ -43,61 +43,79 @@ module tb_ALUController;
         // AND
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b111; 
-        ALUOp = 2'b10; 
+        tb_ALUOp = 2'b10; 
         #100; 
 
         // OR
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b110; 
-        ALUOp = 2'b10; 
+        tb_ALUOp = 2'b10; 
         #100; 
 
         // NOR
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b100; 
-        ALUOp = 2'b10; 
+        tb_ALUOp = 2'b10; 
         #100; 
 
         // SLT
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b010; 
-        ALUOp = 2'b10; 
+        tb_ALUOp = 2'b10; 
         #100; 
 
         // ADD
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b000; 
-        ALUOp = 2'b10; 
+        tb_ALUOp = 2'b10; 
         #100; 
 
         // SUB
         tb_Funct7 = 7'b0100000;
         tb_Funct3 = 3'b000; 
-        ALUOp = 2'b10; 
+        tb_ALUOp = 2'b10; 
         #100; 
 
         // ANDI
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b111; 
-        ALUOp = 2'b00; 
+        tb_ALUOp = 2'b00; 
         #100; 
 
         // ORI
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b110; 
-        ALUOp = 2'b00; 
+        tb_ALUOp = 2'b00; 
         #100; 
 
         // NORI
         tb_Funct7 = 7'b0000000;
         tb_Funct3 = 3'b100; 
-        ALUOp = 2'b00; 
+        tb_ALUOp = 2'b00; 
         #100; 
 
         // SLTI
         tb_Funct7 = 7'b0000000;
-        tb_Funct3 = 3'b111; 
-        ALUOp = 2'b10; 
+        tb_Funct3 = 3'b010; 
+        tb_ALUOp = 2'b00; 
+        #100; 
+
+        // ADDI
+        tb_Funct7 = 7'b0000000;
+        tb_Funct3 = 3'b000; 
+        tb_ALUOp = 2'b00; 
+        #100; 
+
+        // LW
+        tb_Funct7 = 7'b0000000;
+        tb_Funct3 = 3'b010; 
+        tb_ALUOp = 2'b01; 
+        #100; 
+
+        // SW
+        tb_Funct7 = 7'b0000000;
+        tb_Funct3 = 3'b010; 
+        tb_ALUOp = 2'b01; 
         #100; 
     end
 endmodule
