@@ -35,6 +35,7 @@ module tb_Controller;
 
     // instantiate the DUT
     Controller DUT (
+        .Opcode(tb_Opcode),
         .ALUSrc(tb_ALUSrc),
         .MemtoReg(tb_MemtoReg),
         .RegWrite(tb_RegWrite),

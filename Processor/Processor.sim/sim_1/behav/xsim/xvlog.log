@@ -1,22 +1,4 @@
-INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/1anh2/OneDrive/Documents/RISC-V/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Controller
-ERROR: [VRFC 10-2989] 'MemtoRead' is not declared [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:36]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register MemWrite is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:37]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register MemRead is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:38]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register ALUSrc is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:39]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register RegWrite is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:40]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register ALUOp is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:41]
-ERROR: [VRFC 10-2989] 'MemtoRead' is not declared [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:44]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register MemWrite is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:45]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register MemRead is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:46]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register ALUSrc is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:47]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register RegWrite is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:48]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register ALUOp is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:49]
-ERROR: [VRFC 10-2989] 'MemtoRead' is not declared [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:52]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register MemWrite is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:53]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register MemRead is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:54]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register ALUSrc is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:55]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register RegWrite is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:56]
-ERROR: [VRFC 10-1280] procedural assignment to a non-register ALUOp is not permitted, left-hand side should be reg/integer/time/genvar [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:57]
-ERROR: [VRFC 10-2989] 'MemtoRead' is not declared [C:/Projects/RISC-V/Processor/Processor.srcs/sources_1/new/Controller.v:60]
-INFO: [#UNDEF] Sorry, too many errors..
+INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/1anh2/OneDrive/Documents/RISC-V/RISC-V/Processor/Processor.srcs/sim_1/new/tb_Controller.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_Controller
