@@ -33,15 +33,15 @@ module Controller(
     always @ (Opcode) begin 
         case(Opcode)
             7'b0110011: begin   //AND,OR,ADD,SUB,SLT,NOR 
-                            MemtoReg  = 0;
+                            MemtoReg  =  0;
                             MemWrite   = 0; 
                             MemRead    = 0;
                             ALUSrc     = 0; 
-                            RegWrite   = 0; 
+                            RegWrite   = 1; 
                             ALUOp      = 2'b10; 
                         end
             7'b0010011: begin   //ANDI,ORI,ADDI,SLTI,NORI
-                            MemtoReg = 0;
+                            MemtoReg   = 0;
                             MemWrite   = 0; 
                             MemRead    = 0;
                             ALUSrc     = 1; 
@@ -57,7 +57,7 @@ module Controller(
                             ALUOp      = 2'b01; 
                         end
             7'b0100011: begin   //SW 
-                            MemtoReg  = 0;
+                            MemtoReg   = 0;
                             MemWrite   = 1; 
                             MemRead    = 0;
                             ALUSrc     = 1; 
