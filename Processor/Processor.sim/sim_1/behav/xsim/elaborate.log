@@ -1,25 +1,16 @@
 Vivado Simulator 2019.2
 Copyright 1986-1999, 2001-2019 Xilinx, Inc. All Rights Reserved.
-Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto c99ca5f9616e4198b34e7463e3c7aa0d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_processor_behav xil_defaultlib.tb_processor xil_defaultlib.glbl -log elaborate.log 
+Running: C:/Xilinx/Vivado/2019.2/bin/unwrapped/win64.o/xelab.exe -wto c99ca5f9616e4198b34e7463e3c7aa0d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot tb_DataMem_behav xil_defaultlib.tb_DataMem xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
 Completed static elaboration
 Starting simulation data flow analysis
+WARNING: [XSIM 43-4100] "C:/Users/1anh2/OneDrive/Documents/RISC-V/RISC-V/DataMemory_DataPath/DataMemory_DataPath.srcs/sources_1/new/DataMem.v" Line 23. Module DataMem has a timescale but at least one module in design doesn't have timescale.
+WARNING: [XSIM 43-4100] "C:/Users/1anh2/OneDrive/Documents/RISC-V/RISC-V/Processor/Processor.sim/sim_1/behav/xsim/glbl.v" Line 6. Module glbl has a timescale but at least one module in design doesn't have timescale.
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
-Compiling module xil_defaultlib.Controller
-Compiling module xil_defaultlib.ALUController
-Compiling module xil_defaultlib.FlipFlop
-Compiling module xil_defaultlib.InstMem
-Compiling module xil_defaultlib.HalfAdder
-Compiling module xil_defaultlib.ImmGen
-Compiling module xil_defaultlib.RegFile
-Compiling module xil_defaultlib.MUX21
-Compiling module xil_defaultlib.alu_32
 Compiling module xil_defaultlib.DataMem
-Compiling module xil_defaultlib.DataPath
-Compiling module xil_defaultlib.processor
-Compiling module xil_defaultlib.tb_processor
+Compiling module xil_defaultlib.tb_DataMem
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot tb_processor_behav
+Built simulation snapshot tb_DataMem_behav

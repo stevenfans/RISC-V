@@ -143,6 +143,36 @@ module tb_processor();
             point = point + 1; 
         end 
 
+        #20; 
+        if (tb_Result == 32'hfffff8D7) // ori
+        begin 
+            point = point + 1; 
+        end
+        
+        #20; 
+        if (tb_Result == 32'h00000001) // SLT
+        begin 
+            point = point + 1; 
+        end
+        
+        #20; 
+        if (tb_Result == 32'hfffffb2c) // nori
+        begin 
+            point = point + 1; 
+        end
+        
+        #20; 
+        if (tb_Result == 32'h00000030) // sw
+        begin 
+            point = point + 1; 
+        end
+        
+        #20; 
+        if (tb_Result == 32'h00000030) // lw
+        begin 
+            point = point + 1; 
+        end
+
         $display("%s%d", "The number of correct test caese is:" , point); 
 
     end

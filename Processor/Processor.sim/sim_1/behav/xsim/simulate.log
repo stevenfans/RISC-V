@@ -1,4 +1,2 @@
 Vivado Simulator 2019.2
 Time resolution is 1 ps
-The number of correct test caese is:         13
-$finish called at time : 430 ns : File "C:/Projects/RISC-V/Processor/Processor.srcs/sim_1/new/tb_processor.v" Line 152
