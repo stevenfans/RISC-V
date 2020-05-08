@@ -63,14 +63,14 @@ module processor(
             .clk(clk),
             .reg_write(regwrite),
             .alu_src(alusrc),
-            .mem_write(mem_write),
+            .mem_write(memwrite),
             .mem2reg(memtoreg),
             .alu_cc(operation),
             .mem_read(memread),
             .opcode(opcode),
             .funct3(funct3),
-            .funct7(fucnt7),
-            .alu_result(result)
+            .funct7(funct7),
+            .alu_result(Result)
         );
 
 endmodule
