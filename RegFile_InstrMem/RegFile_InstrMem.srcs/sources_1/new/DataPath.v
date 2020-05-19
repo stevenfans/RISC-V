@@ -60,7 +60,7 @@ module DataPath(
             .q(PC)
         );
 
-    InstMem inst_mem(
+    Instr_mem inst_mem(
         .addr(PC),
         .instruction(Instruction)
     );
