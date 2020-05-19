@@ -12,12 +12,12 @@ Compiling module xil_defaultlib.Controller
 Compiling module xil_defaultlib.ALUController
 Compiling module xil_defaultlib.FlipFlop
 Compiling module xil_defaultlib.Instr_mem
-Compiling module xil_defaultlib.HalfAdder
-Compiling module xil_defaultlib.ImmGen
+Compiling module xil_defaultlib.HA
+Compiling module xil_defaultlib.Imm_Gen
 Compiling module xil_defaultlib.RegFile
-Compiling module xil_defaultlib.MUX21
-Compiling module xil_defaultlib.alu_32
-Compiling module xil_defaultlib.DataMem
+Compiling module xil_defaultlib.Mux
+Compiling module xil_defaultlib.ALU
+Compiling module xil_defaultlib.Data_mem
 Compiling module xil_defaultlib.DataPath
 Compiling module xil_defaultlib.processor
 Compiling module xil_defaultlib.tb_processor

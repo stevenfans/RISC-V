@@ -65,14 +65,14 @@ module DataPath(
         .instruction(Instruction)
     );
 
-    HalfAdder ha(
+    HA ha(
             .A(PC),
             .B(8'h04),
             .Sum(PCPlus4),
             .Cout()
         );
 
-    ImmGen imm_gen(
+    Imm_Gen imm_gen(
             .InstCode(Instruction),
             .ImmOut(ExtImm)
         ); 
@@ -89,24 +89,24 @@ module DataPath(
             .rg_rd_data2(Reg2)
         );
 
-    MUX21 alu_mux(
+    Mux alu_mux(
             .D1(Reg2),
             .D2(ExtImm),
             .S(alu_src),
             .Y(SrcB)
         );
 
-    alu_32 alu(
+    ALU alu(
             .A_in(Reg1),
             .B_in(SrcB),
             .ALU_Sel(alu_cc),
             .ALU_Out(ALU_Result),
-            .Carry_Out(),
+            .Carry_Out(),   
             .Zero(),
             .Overflow()
         );
 
-    DataMem data_mem(
+    Data_mem data_mem(
             .MemRead(mem_read),
             .MemWrite(mem_write),
             .addr(ALU_Result[8:0]),
@@ -114,7 +114,7 @@ module DataPath(
             .read_data(DataMem_read)
         );
         
-    MUX21 data_mem_mux(
+    Mux data_mem_mux(
             .D1(ALU_Result),
             .D2(DataMem_read),
             .S(mem2reg),
